@@ -8,7 +8,6 @@
 
 #ifndef HuffmanTreeMethods_h
 #define HuffmanTreeMethods_h
-//#define _CRT_SECURE_NO_WARNINGS
 
 #include "TreeStructure.h"
 #include "stdio.h"
@@ -32,7 +31,7 @@ void select(HuffmanTree huffmanTree, int index, int &min1, int &min2){
 		int minWeight;
 		int i;
 
-		for (i = 0, minWeight = MAX_WEIGHT; i <= index; ++i){
+		for (i = 0, minWeight = MAX_HTN_WEIGHT; i <= index; ++i){
 			if (minWeight > huffmanTree[i].weight
 				&&huffmanTree[i].parent == 0){
 				minWeight = huffmanTree[i].weight;
@@ -40,7 +39,7 @@ void select(HuffmanTree huffmanTree, int index, int &min1, int &min2){
 			}
 		}
 
-		for (i = 0, minWeight = MAX_WEIGHT; i <= index; ++i){
+		for (i = 0, minWeight = MAX_HTN_WEIGHT; i <= index; ++i){
 			if (minWeight > huffmanTree[i].weight
 				&&huffmanTree[i].parent == 0
 				&& i != min1){

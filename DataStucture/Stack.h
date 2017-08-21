@@ -11,6 +11,8 @@
 
 #include "Basis.h"
 
+typedef char SElemType;//栈中的数据类型
+
 /*
 栈的定义
 在此定义下栈，栈满的定义：S.top-S.base==S.stacksize为true；

@@ -9,7 +9,7 @@
 #ifndef TreeTest_h
 #define TreeTest_h
 
-#include "BinaryTreeMethods.h"
+#include "BinaryTreeBaseMethods.h"
 #include "HuffmanTreeMethods.h"
 
 /*

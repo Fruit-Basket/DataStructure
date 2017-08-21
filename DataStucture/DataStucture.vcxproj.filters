@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Tree">
       <UniqueIdentifier>{768a7178-fbd0-4335-a6a7-2d703244a7bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Graph">
+      <UniqueIdentifier>{5762f6a6-927d-4fec-b08b-8e5e5c5c4773}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -36,9 +39,6 @@
     <ClInclude Include="ThreadedBinaryTreeMethods.h">
       <Filter>Header Files\Tree</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryTreeMethods.h">
-      <Filter>Header Files\Tree</Filter>
-    </ClInclude>
     <ClInclude Include="TreeStructure.h">
       <Filter>Header Files\Tree</Filter>
     </ClInclude>
@@ -47,6 +47,15 @@
     </ClInclude>
     <ClInclude Include="TreeTest.h">
       <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphStructure.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTreeBaseMethods.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBaseMethods.h">
+      <Filter>Header Files\Graph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

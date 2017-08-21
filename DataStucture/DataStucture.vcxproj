@@ -85,7 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basis.h" />
-    <ClInclude Include="BinaryTreeMethods.h" />
+    <ClInclude Include="BinaryTreeBaseMethods.h" />
+    <ClInclude Include="GraphBaseMethods.h" />
+    <ClInclude Include="GraphStructure.h" />
     <ClInclude Include="HuffmanTreeMethods.h" />
     <ClInclude Include="ThreadedBinaryTreeMethods.h" />
     <ClInclude Include="TreeStructure.h" />

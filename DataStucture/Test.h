@@ -10,7 +10,6 @@
 #define Test_h
 
 #include "stdio.h"
-#include "BinaryTreeMethods.h"
 
 /*
 测试整形的指针变量

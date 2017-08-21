@@ -1,5 +1,5 @@
 /**
-* 二叉树的存储表示
+* 树的存储表示
 * Author: FruitBasket
 * Time: 2017/8/17
 * Email: FruitBasket@qq.com
@@ -10,6 +10,11 @@
 #define TreeStructure_h
 
 #include "Basis.h"
+
+#define MAX_HTN_WEIGHT  99999//Huffman树结点的最大权值
+//最大权值不能取MAX_INT，因为如果出现一个最大权值和一个普通权值相加时，会发生上溢。
+
+typedef char TElemType;//树结点的数据类型
 
 //二叉树的顺序储存表示
 //这种表示方式最适用于完全二叉树
