@@ -57,6 +57,9 @@
     <ClInclude Include="GraphBaseMethods.h">
       <Filter>Header Files\Graph</Filter>
     </ClInclude>
+    <ClInclude Include="GraphTest.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

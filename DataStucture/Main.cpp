@@ -8,9 +8,9 @@
 
 #include "stdio.h"
 #include "TreeTest.h"
+#include "GraphTest.h"
 
 void main(){
-	huffmanTreeTest();
 
 	getchar();
 	getchar();

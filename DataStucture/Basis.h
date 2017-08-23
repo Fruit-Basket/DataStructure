@@ -14,7 +14,6 @@
 #define OK 1
 #define ERROR 0
 #define OVERFLOW -2
-#define NULL 0
 #define MAXSIZE 100
 #define MAX_INT 2147483647		//vs2013中使用4个字节来存放int变量
 #define END_FLAG -1    //作为结束输入标志，在二叉排序树创建时使用
