@@ -1,5 +1,5 @@
 /**
-* Kruskal最小生成树算法，使用邻接矩阵连通无向网
+* Kruskal（克鲁斯卡尔）最小生成树算法，使用邻接矩阵连通无向网
 * Author: FruitBasket
 * Time: 2017/8/23
 * Email: FruitBasket@qq.com
@@ -11,9 +11,8 @@
 
 /*
 算法思想：
-本算法又称为“加边法”。
-将图中所有边按权值从小到大顺序排列，从权值较小的边起
-依次选择不形成回路的边来生成最小生成树。
+本算法又称为“加边法”
+将图中所有边按权值从小到大顺序排列，从权值较小的边起依次选择不形成回路的边来生成最小生成树
 */
 
 #include "Basis.h"
@@ -21,8 +20,8 @@
 #include "GraphStructure.h"
 
 //辅助数组
-//1.数组edges的元素定义
 /*
+1.数组edges的元素定义
 存放边的信息，包括边的两个顶点信息和权值
 */
 typedef struct{
@@ -31,19 +30,16 @@ typedef struct{
 	ArcType lowCost;	//边上的权值
 }Edge;
 
-//2.数组vertexSet
 /*
+2.数组vertexSet
 1）元素值标识各个顶点所属的连通分量
 2）数组元素和顶点一一对应
 3）元素的下标和顶点编号对应
 4）元素之表示该顶点所在的连通分量，值相同则表示两个顶点在同一个连通分量中。
 */
 
-
-//辅助方法
 /*
-将数组Edge中的元素按权值从小到大排序，
-使用直接插入排序，数组的第0号同样使用
+辅助方法：将数组Edge中的元素按权值从小到大排序，使用直接插入排序，数组的第0号同样使用
 */
 void sort(Edge edges[MAX_ARC_NUM], int arcsNum){
 	Edge temp;
@@ -67,8 +63,9 @@ void sort(Edge edges[MAX_ARC_NUM], int arcsNum){
 	}
 }
 
-
-//Kruskal最小生成树算法
+/*
+Kruskal（克鲁斯卡尔）最小生成树算法
+*/
 void KruskalMiniSpanTree(AdjacencyMatrixGraph aMGraph){
 	int i, j, k;
 	int head, tail;

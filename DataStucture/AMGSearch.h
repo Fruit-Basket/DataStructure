@@ -19,30 +19,31 @@
 startVertexIndex : 以startVertexIndex编号对应的顶点，开始进行搜索遍历
 visited[]:作为顶点是否已被访问的标记。如果已被访问，则顶点对应元素值为true，否则为false
 */
-void connectiveDepthFirstSearch(AdjacencyMatrixGraph aMGraph, int startVertexIndex, bool visited[MAX_VERTEX_NUM]){
+void connectiveDepthFirstSearch(AdjacencyMatrixGraph graph, int startVertexIndex, bool visited[MAX_VERTEX_NUM]){
 	int i;
-	printf("%c  ", aMGraph.vertices[startVertexIndex]);
+	printf("%c  ", graph.vertices[startVertexIndex]);
 	visited[startVertexIndex] = true;
 	//遍历与顶点startVertexIndex直接相连的顶点
-	for (i = 0; i<aMGraph.verticesNum; i++){
-		//如果顶点startVertexIndex和顶点i直接相连，顶点i未被访问过
-		if (aMGraph.arcs[startVertexIndex][i] != 0 && visited[i] != true){
+	for (i = 0; i<graph.verticesNum; i++){
+		if (graph.arcs[startVertexIndex][i] != 0 && visited[i] != true){//如果顶点startVertexIndex和顶点i直接相连，顶点i未被访问过
 			//以顶点i作为新的起始顶点
-			connectiveDepthFirstSearch(aMGraph, i, visited);
+			connectiveDepthFirstSearch(graph, i, visited);
 		}
 	}
 }
 
 /*
 非连通图深度优先搜索遍历
+
+graph:图
 */
-void depthFirstSearch(AdjacencyMatrixGraph aMGraph){
+void depthFirstSearch(AdjacencyMatrixGraph graph){
 	int i;
 	bool visited[MAX_VERTEX_NUM] = { false };
 	//分别以每一个顶点为起始点，进行连通图的深度优先搜索
-	for (i = 0; i<aMGraph.verticesNum; i++){
+	for (i = 0; i<graph.verticesNum; i++){
 		if (visited[i] == false){
-			connectiveDepthFirstSearch(aMGraph, i, visited);
+			connectiveDepthFirstSearch(graph, i, visited);
 		}
 	}
 }

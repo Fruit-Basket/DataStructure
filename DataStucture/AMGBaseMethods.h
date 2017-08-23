@@ -78,7 +78,6 @@ Status createNondirectionalGraph(
 	else{
 		graph.verticesNum = verticesNum;
 		graph.arcsNum = arcsNum;
-
 		int i,j;
 		for (i = 0; i < verticesNum; ++i){
 			graph.vertices[i] = vertices[i];//这里没有考虑顶点表如果存在相同顶点的错误情况
@@ -106,90 +105,6 @@ Status createNondirectionalGraph(
 			}
 		}
 	}
-}
-
-/*
-创建无向网，默认顶点没有从自己出发到到达自己的边
-*/
-Status createNondirectionalNetwork(AdjacencyMatrixGraph &aMGraph){
-	int verticesNum, arcsNum;
-	VertexType vertex1, vertex2;
-	ArcType arcWeight;
-	int  vertexLocation1, vertexLocation2;
-	int i, j;
-	//1.初始化矩阵
-	printf("input the verticesNum , arcsNum (separate with ',' , end with ENTER): ");
-	scanf("%d,%d", &verticesNum, &arcsNum);
-	getchar();	//用于接收多余的回车健
-	aMGraph.verticesNum = verticesNum;
-	aMGraph.arcsNum = arcsNum;
-
-	printf("input the vertices information (end with ENTER) : ");
-	for (i = 0; i<verticesNum; i++){
-		aMGraph.vertices[i] = getchar();
-	}
-	getchar();
-
-	for (i = 0; i<verticesNum; i++){
-		for (j = 0; j<verticesNum; j++){
-			aMGraph.arcs[i][j] = MAX_WEIGHT;
-		}
-	}
-	//初始化结束
-	//2.创建矩阵
-	printf("input each arc by \" vertex1vertex2arcWeight\"\n");
-	for (i = 0; i<arcsNum; i++){
-		printf("No.%d : ", i);
-		scanf("%c%c%d", &vertex1, &vertex2, &arcWeight);
-		getchar();		//接收多余的回车键
-		vertexLocation1 = locateVertex(aMGraph, vertex1);
-		vertexLocation2 = locateVertex(aMGraph, vertex2);
-		aMGraph.arcs[vertexLocation1][vertexLocation2] = arcWeight;
-		aMGraph.arcs[vertexLocation2][vertexLocation1] = arcWeight;
-	}
-	return OK;
-}
-
-/*
-创建有向网，默认顶点没有从自己出发到到达自己的边
-*/
-Status createDirectionalNetwork(AdjacencyMatrixGraph &aMGraph){
-	int verticesNum, arcsNum;
-	VertexType vertex1, vertex2;
-	ArcType arcWeight;
-	int  vertexLocation1, vertexLocation2;
-	int i, j;
-	//1.初始化矩阵
-	printf("input the verticesNum , arcsNum (separate with ',' , end with ENTER): ");
-	scanf("%d,%d", &verticesNum, &arcsNum);
-	getchar();	//用于接收多余的回车健
-	aMGraph.verticesNum = verticesNum;
-	aMGraph.arcsNum = arcsNum;
-
-	printf("input the vertices information (end with ENTER) : ");
-	for (i = 0; i<verticesNum; i++){
-		aMGraph.vertices[i] = getchar();
-	}
-	getchar();
-
-	for (i = 0; i<verticesNum; i++){
-		for (j = 0; j<verticesNum; j++){
-			aMGraph.arcs[i][j] = MAX_WEIGHT;
-		}
-	}
-	//初始化结束
-	//2.创建矩阵
-	printf("input each arc by \" vertex1vertex2arcWeight\"\n");
-	for (i = 0; i<arcsNum; i++){
-		printf("No.%d : ", i);
-		scanf("%c%c%d", &vertex1, &vertex2, &arcWeight);
-		getchar();		//接收多余的回车键
-		vertexLocation1 = locateVertex(aMGraph, vertex1);
-		vertexLocation2 = locateVertex(aMGraph, vertex2);
-		aMGraph.arcs[vertexLocation1][vertexLocation2] = arcWeight;
-		//aMGraph.arcs[vertexLocation2][vertexLocation1]=arcWeight;
-	}
-	return OK;
 }
 
 #endif
