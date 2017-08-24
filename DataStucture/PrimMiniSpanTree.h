@@ -1,5 +1,5 @@
 /**
-* Prim最小生成树算法，使用邻接矩阵连通无向网
+* Prim（普里姆）最小生成树算法，使用邻接矩阵连通无向网
 * Author: FruitBasket
 * Time: 2017/8/23
 * Email: FruitBasket@qq.com

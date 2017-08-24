@@ -22,6 +22,42 @@
     <Filter Include="Header Files\Graph">
       <UniqueIdentifier>{5762f6a6-927d-4fec-b08b-8e5e5c5c4773}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Sorting">
+      <UniqueIdentifier>{62c0c623-581e-47b9-a38c-5e6e593a234e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search">
+      <UniqueIdentifier>{ec7609d8-5ea0-4d6c-b3c0-17d082d7cd62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sorting\ExchangeSort">
+      <UniqueIdentifier>{222ea64a-f034-4073-b9ee-1b690672e273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sorting\InsertionSort">
+      <UniqueIdentifier>{bf7d85e5-c360-4a40-9c3d-519d16793122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sorting\SelectionSort">
+      <UniqueIdentifier>{61057125-21a2-4114-a1f3-75d67dc0eddd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\HashTable">
+      <UniqueIdentifier>{5bd03cfc-0834-4825-a32e-23adf95d4abe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\LinearList">
+      <UniqueIdentifier>{48cdbbf8-166f-4a73-8f52-58fbaab03b26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\TreeList">
+      <UniqueIdentifier>{d8ff596a-ef1c-43e7-95ff-121d283d9e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\TreeList\B+Tree">
+      <UniqueIdentifier>{dce68473-33ee-40e7-b014-9a5e8173c4d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\TreeList\BalancedBinaryTree">
+      <UniqueIdentifier>{ec35a417-db5e-4bdb-9e84-86446453b610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\TreeList\BinarySortTree">
+      <UniqueIdentifier>{42c42f00-cc4b-426f-b78b-23d3887f4c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Search\TreeList\B-Tree">
+      <UniqueIdentifier>{7b2176e0-9493-4a96-9df1-503d3b0fa22c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -54,11 +90,80 @@
     <ClInclude Include="BinaryTreeBaseMethods.h">
       <Filter>Header Files\Tree</Filter>
     </ClInclude>
-    <ClInclude Include="GraphBaseMethods.h">
-      <Filter>Header Files\Graph</Filter>
-    </ClInclude>
     <ClInclude Include="GraphTest.h">
       <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="AMGBaseMethods.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="ALGBaseMethods.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="ALGSearch.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="CriticalPath.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="TopologicalSort.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="AMGSearch.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="DijkstraShortestPath.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="FloyedShortestPath.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="KruskalMiniSpanTree.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimMiniSpanTree.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceListForSorting.h">
+      <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="BubbleSort.h">
+      <Filter>Header Files\Sorting\ExchangeSort</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryInsertionSort.h">
+      <Filter>Header Files\Sorting\InsertionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="StraightInsertionSort.h">
+      <Filter>Header Files\Sorting\InsertionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleSelectionSort.h">
+      <Filter>Header Files\Sorting\SelectionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearch.h">
+      <Filter>Header Files\Search\LinearList</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceListForSearch.h">
+      <Filter>Header Files\Search\LinearList</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceSearch.h">
+      <Filter>Header Files\Search\LinearList</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySortTree.h">
+      <Filter>Header Files\Search\TreeList\BinarySortTree</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySortTreeSearch.h">
+      <Filter>Header Files\Search\TreeList\BinarySortTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateBinarySortTree.h">
+      <Filter>Header Files\Search\TreeList\BinarySortTree</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteBinarySortTreeNode.h">
+      <Filter>Header Files\Search\TreeList\BinarySortTree</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertBinarySortTreeNode.h">
+      <Filter>Header Files\Search\TreeList\BinarySortTree</Filter>
+    </ClInclude>
+    <ClInclude Include="B-Tree.h">
+      <Filter>Header Files\Search\TreeList\B-Tree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

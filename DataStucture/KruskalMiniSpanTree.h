@@ -35,7 +35,7 @@ typedef struct{
 1）元素值标识各个顶点所属的连通分量
 2）数组元素和顶点一一对应
 3）元素的下标和顶点编号对应
-4）元素之表示该顶点所在的连通分量，值相同则表示两个顶点在同一个连通分量中。
+4）元素值表示该顶点所在的连通分量，值相同则表示两个顶点在同一个连通分量中。
 */
 
 /*
@@ -65,6 +65,8 @@ void sort(Edge edges[MAX_ARC_NUM], int arcsNum){
 
 /*
 Kruskal（克鲁斯卡尔）最小生成树算法
+
+aMGraph:邻接矩阵连通无向网
 */
 void KruskalMiniSpanTree(AdjacencyMatrixGraph aMGraph){
 	int i, j, k;

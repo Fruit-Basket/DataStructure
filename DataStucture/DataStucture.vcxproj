@@ -84,13 +84,36 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ALGBaseMethods.h" />
+    <ClInclude Include="ALGSearch.h" />
+    <ClInclude Include="AMGSearch.h" />
+    <ClInclude Include="B-Tree.h" />
     <ClInclude Include="Basis.h" />
+    <ClInclude Include="BinaryInsertionSort.h" />
+    <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="BinarySortTree.h" />
+    <ClInclude Include="BinarySortTreeSearch.h" />
     <ClInclude Include="BinaryTreeBaseMethods.h" />
-    <ClInclude Include="GraphBaseMethods.h" />
+    <ClInclude Include="AMGBaseMethods.h" />
+    <ClInclude Include="BubbleSort.h" />
+    <ClInclude Include="CreateBinarySortTree.h" />
+    <ClInclude Include="CriticalPath.h" />
+    <ClInclude Include="DeleteBinarySortTreeNode.h" />
+    <ClInclude Include="DijkstraShortestPath.h" />
+    <ClInclude Include="FloyedShortestPath.h" />
     <ClInclude Include="GraphStructure.h" />
     <ClInclude Include="GraphTest.h" />
     <ClInclude Include="HuffmanTreeMethods.h" />
+    <ClInclude Include="InsertBinarySortTreeNode.h" />
+    <ClInclude Include="KruskalMiniSpanTree.h" />
+    <ClInclude Include="PrimMiniSpanTree.h" />
+    <ClInclude Include="SequenceListForSearch.h" />
+    <ClInclude Include="SequenceListForSorting.h" />
+    <ClInclude Include="SequenceSearch.h" />
+    <ClInclude Include="SimpleSelectionSort.h" />
+    <ClInclude Include="StraightInsertionSort.h" />
     <ClInclude Include="ThreadedBinaryTreeMethods.h" />
+    <ClInclude Include="TopologicalSort.h" />
     <ClInclude Include="TreeStructure.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Test.h" />

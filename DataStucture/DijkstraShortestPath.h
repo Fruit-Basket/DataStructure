@@ -1,7 +1,7 @@
 /**
 * Dijdstra最短路径算法，使用邻接矩阵有向网（可连通或不连通）
 * Author: FruitBasket
-* Time: 2017/8/21
+* Time: 2017/8/23
 * Email: FruitBasket@qq.com
 * Source code: github.com/Fruit-Basket
 */
@@ -22,22 +22,18 @@
 #include "stdio.h"
 #include "GraphStructure.h"
 
-//辅助数组
-//1.数组S[i]
 /*
+辅助数组:
+1.数组s[]
 记录从源点v0到终点vi是否已被确定最短路径长度，ture表示确定，false
 表示尚未确定
-*/
 
-//2.数组currentShortestPath[i]
-/*
+2.数组currentShortestPath[]
 1）记录从原点v0到终点vi的当前最短路径上vi的直接前驱顶点编号
 2）其初值为：如果从v0到vi有弧，则currentShortestPath[i]为v0；否则
 为-1
-*/
 
-//3.数组currentShortestDistance[i]
-/*
+3.数组currentShortestDistance[]
 1）记录从源点v0到终点vi的当前最短路径长度
 2）其初值为：如果从v0到vi有弧，则currentShortestDistance[i]为弧上的
 权值；否则为-1
@@ -66,15 +62,17 @@ void dijkstraShortestPath(AdjacencyMatrixGraph aMGraph, int startVertexIndex){
 		}
 		currentShortestDistance[i] = aMGraph.arcs[startVertexIndex][i];
 	}
+
 	s[startVertexIndex] = true;   //已找到源点到顶点startVertex的最短路径
 	currentShortestDistance[startVertexIndex] = 0;	//源点到顶点startVertex的最短路径为0
 
 	//2.主算法
-	for (i = 1; i<aMGraph.verticesNum; ++i){	//循环aMGraph.verticesNum-1次
-		printf("No.%d 回循环\n", i);
+	for (i = 1; i<aMGraph.verticesNum; ++i){//循环aMGraph.verticesNum-1次
+		if(DEBUG)printf("No.%d 回循环\n", i);
+
 		//2.1找出从源点到剩余顶点的当前最短路径的长度和对应终点
-		endVertexIndex = -1;	//记录终点
-		minDistance = MAX_WEIGHT;    //记录从源点到终点endVertexIndex当前最短路径长度
+		endVertexIndex = -1;//记录终点
+		minDistance = MAX_WEIGHT;//记录从源点到终点endVertexIndex当前最短路径长度
 		for (j = 0; j<aMGraph.verticesNum; ++j){
 			if (s[j] == false && currentShortestDistance[j]<minDistance){
 				endVertexIndex = j;
@@ -96,7 +94,7 @@ void dijkstraShortestPath(AdjacencyMatrixGraph aMGraph, int startVertexIndex){
 		}
 	}
 
-	printf("算法结果：\n");
+	printf("计算结果：\n");
 	printf("the s:\n");
 	for (i = 0; i<aMGraph.verticesNum; ++i){
 		if (s[i] == true){
