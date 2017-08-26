@@ -82,7 +82,7 @@ Status topologicalSort(AdjacencyListGraph aLGraph, int topo[]){
 		topo[amount] = popVertexIndex;		//出栈的顶点编号进入拓扑队列
 		++amount;   //拓扑序列中顶点数量加1
 		pArcNode = aLGraph.vertices[popVertexIndex].firstArc;
-		while (pArcNode != NULL){		//如果还有从顶点popVertexIndex发出的边
+		while (pArcNode){		//如果还有从顶点popVertexIndex发出的边
 			inDegree[pArcNode->adjacencyVertex]--;    //被边pArcNode指向的顶点的入度减1
 			if (inDegree[pArcNode->adjacencyVertex] == 0){		//如果结点入读变为0，则入栈
 				top++;

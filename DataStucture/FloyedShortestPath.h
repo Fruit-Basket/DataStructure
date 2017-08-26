@@ -9,25 +9,21 @@
 #ifndef FloyedShortestPath_h
 #define FloyedShortestPath_h
 
-/*
-算法思想：
-分别以每个顶点作为每对顶点
-
-之间的中间点，检测每对顶点之间的最短路径。
-*/
-
 #include "Basis.h"
 #include "stdio.h"
 #include "GraphStructure.h"
 
-//辅助数组
-//1.currentShortestPath[i][j]
 /*
-元素值表示从顶点 i 到 j 的最短路径上顶点 j 的前一个顶点的序号
+算法思想：
+分别以每个顶点作为每对顶点之间的中间点，检测每对顶点之间的最短路径。
 */
 
-//2.currentShortestDistance[i][j]
 /*
+辅助数组
+1.currentShortestPath[i][j]
+元素值表示从顶点 i 到 j 的最短路径上顶点 j 的前一个顶点的序号
+
+2.currentShortestDistance[i][j]
 元素值表示顶点 i 和 j 之间的最短路径长度
 */
 
@@ -52,20 +48,24 @@ void FloyedShortestPath(AdjacencyMatrixGraph aMGraph){
 			currentShortestDistance[i][j] = aMGraph.arcs[i][j];
 		}
 	}
-	for (i = 0; i<aMGraph.verticesNum; i++){
-		for (j = 0; j<aMGraph.verticesNum; j++){
-			printf("%4d", currentShortestPath[i][j]);
+
+	if (DEBUG){
+		for (i = 0; i<aMGraph.verticesNum; i++){
+			for (j = 0; j<aMGraph.verticesNum; j++){
+				printf("%4d", currentShortestPath[i][j]);
+			}
+			putchar('\n');
 		}
-		putchar('\n');
-	}
-	for (i = 0; i<aMGraph.verticesNum; i++){
-		for (j = 0; j<aMGraph.verticesNum; j++){
-			printf("%d    ", currentShortestDistance[i][j]);
+
+		for (i = 0; i<aMGraph.verticesNum; i++){
+			for (j = 0; j<aMGraph.verticesNum; j++){
+				printf("%d    ", currentShortestDistance[i][j]);
+			}
+			putchar('\n');
 		}
-		putchar('\n');
+		printf("aMGraph.verticesNum=%d\n", aMGraph.verticesNum);
 	}
 
-	//printf("aMGraph.verticesNum=%d\n",aMGraph.verticesNum);
 	//2.分别以每个顶点作为每对顶点之间的中间点，检测每对顶点之间的最短路径。
 	for (k = 0; k<aMGraph.verticesNum; ++k){
 		for (i = 0; i<aMGraph.verticesNum; ++i){
