@@ -32,22 +32,22 @@
 */
 
 /*
-辅助方法
-1）方法结束后，topo[]存放图中顶点的入度
-2）topo[]元素编号和图中顶点编号一一对应
+辅助方法：使inDegree[]放图中顶点的入度（inDegree[]元素编号和图中顶点编号一一对应）
 */
 void findInDegree(AdjacencyListGraph aLGraph, int inDegree[]){
 	int i;
 	ArcNode *p;
 
+	//初始化
 	for (i = 0; i<aLGraph.verticesNum; i++){
 		inDegree[i] = 0;
 	}
 
+	//遍历
 	for (i = 0; i<aLGraph.verticesNum; i++){
 		p = aLGraph.vertices[i].firstArc;
-		while (p != NULL){
-			inDegree[p->adjacencyVertex]++;
+		while (p){
+			inDegree[p->adjacencyVertex]++;//顶点入度+1
 			p = p->nextArc;
 		}
 	}
@@ -60,7 +60,7 @@ void findInDegree(AdjacencyListGraph aLGraph, int inDegree[]){
 Status topologicalSort(AdjacencyListGraph aLGraph, int topo[]){
 	int inDegree[MAX_VERTEX_NUM];
 	int stack[MAX_VERTEX_NUM], top = -1;
-	int amount;	//记录拓扑序列中顶点数量
+	int amount;//记录拓扑序列中顶点数量
 	int popVertexIndex;
 	ArcNode *pArcNode;
 	int i;
@@ -68,7 +68,7 @@ Status topologicalSort(AdjacencyListGraph aLGraph, int topo[]){
 	//初始化
 	findInDegree(aLGraph, inDegree);
 	amount = 0;
-	for (i = 0; i<aLGraph.verticesNum; ++i){	//将入度为0的顶点的编号入栈
+	for (i = 0; i<aLGraph.verticesNum; ++i){//将入度为0的顶点的编号入栈
 		if (inDegree[i] == 0){
 			++top;
 			stack[top] = i;
@@ -76,15 +76,17 @@ Status topologicalSort(AdjacencyListGraph aLGraph, int topo[]){
 	}
 
 	//2.主算法
-	while (top>-1){    //如果栈不空
-		popVertexIndex = stack[top];	//顶点编号出栈
+	while (top>-1){//如果栈不空
+		popVertexIndex = stack[top];//顶点编号出栈
 		--top;
-		topo[amount] = popVertexIndex;		//出栈的顶点编号进入拓扑队列
-		++amount;   //拓扑序列中顶点数量加1
+
+		topo[amount] = popVertexIndex;//出栈的顶点编号进入拓扑队列
+		++amount;//拓扑序列中顶点数量加1
+
 		pArcNode = aLGraph.vertices[popVertexIndex].firstArc;
-		while (pArcNode){		//如果还有从顶点popVertexIndex发出的边
-			inDegree[pArcNode->adjacencyVertex]--;    //被边pArcNode指向的顶点的入度减1
-			if (inDegree[pArcNode->adjacencyVertex] == 0){		//如果结点入读变为0，则入栈
+		while (pArcNode){//如果还有从顶点popVertexIndex发出的边
+			inDegree[pArcNode->adjacencyVertex]--;//被边pArcNode指向的顶点的入度减1
+			if (inDegree[pArcNode->adjacencyVertex] == 0){//如果结点入读变为0，则入栈
 				top++;
 				stack[top] = pArcNode->adjacencyVertex;
 			}
