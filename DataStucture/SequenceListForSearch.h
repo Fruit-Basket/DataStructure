@@ -5,7 +5,8 @@
 
 #include "Basis.h"
 
-
+typedef int KeyType;//顺序表数据元素中关键字的类型
+typedef int InformationType;//顺序表数据元素中的信息类型
 
 //1.表中元素的定义
 typedef struct{

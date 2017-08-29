@@ -22,9 +22,6 @@ typedef int Status;//用于描述状态，结合上面的OK、ERROR、OVERFLOW使用
 #define END_FLAG -1//作为结束输入标志，在二叉排序树创建时使用
 #define ORDER 3//B-树的阶
 
-typedef int KeyType;//顺序表数据元素中关键字的类型
-typedef int InformationType;//顺序表数据元素中的信息类型
-
 const int DEBUG = TRUE;//设置程序是否为调试状态（在调试状态下会输出调试信息）
 
 #endif
