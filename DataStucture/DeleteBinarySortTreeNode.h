@@ -19,12 +19,11 @@ void deleteBinarySortTreeNode(BinarySortTree &bSTree,KeyType key){
 	BinarySortNode *pNodeToDelete;
 	BinarySortNode *pParentNode,*pChildTree;    //指示要被删结点的双亲和子树
 	BinarySortNode *pVanNode,*pVanParentNode;		//指示被删结点的前驱和前驱的双亲结点
-	pChildTree=NULL;
 	
 	//1.找到要被删的结点
 	pNodeToDelete=bSTree;
-	pParentNode=NULL;    //将双亲结点初始化为NULL
-	while(pNodeToDelete!=NULL){
+	pParentNode;    //将双亲结点初始化为NULL
+	while(pNodeToDelete){
 		if(key==pNodeToDelete->data.key){
 			break;    //若找到被删结点，则跳出循环
 		}
@@ -37,18 +36,18 @@ void deleteBinarySortTreeNode(BinarySortTree &bSTree,KeyType key){
 			pNodeToDelete=pNodeToDelete->lChild;
 		}
 	}
-	if(pNodeToDelete==NULL){    //如果循环结束后，pNodeToDelete==NULL，则表明不存在被删结点
+	if(pNodeToDelete){    //如果循环结束后，pNodeToDelete==NULL，则表明不存在被删结点
 		return ;
 	}
 
 	//2.对被删结点分3种情况：被删结点有左子树和右子树、只有左子树或右子树、无子树
-	if(pNodeToDelete->lChild!=NULL &&
-		pNodeToDelete->rChild!=NULL){
+	if(pNodeToDelete->lChild &&
+		pNodeToDelete->rChild){
 			pVanParentNode=pNodeToDelete;    //设置pVanParentNode的处置以区分下面的两种情况
 
 			//寻找被删结点的前驱及前驱的双亲，以被删结点的左孩子为起点
 			pVanNode=pNodeToDelete->lChild;
-			while(pVanNode->rChild!=NULL){
+			while(pVanNode->rChild){
 				pVanParentNode=pVanNode;
 				pVanNode=pVanNode->rChild;
 			}
@@ -66,10 +65,10 @@ void deleteBinarySortTreeNode(BinarySortTree &bSTree,KeyType key){
 			delete pVanNode;    //删除前驱结点空间
 	}
 	else{
-		if(pNodeToDelete->lChild!=NULL){
+		if(pNodeToDelete->lChild){
 			pChildTree=pNodeToDelete->lChild;
 	    }
-	    else if(pNodeToDelete->rChild!=NULL){
+	    else if(pNodeToDelete->rChild){
 			pChildTree=pNodeToDelete->rChild;
 		}
 

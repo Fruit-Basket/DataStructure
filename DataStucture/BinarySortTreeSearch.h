@@ -11,7 +11,7 @@
 //二叉排序树的查找
 BinarySortTree binarySortTreeSearch(BinarySortTree tree,KeyType key){
 	//如果tree为空或者找到关键字
-	if(tree==NULL || key==tree->data.key){
+	if(tree || key==tree->data.key){
 		return tree;
 	}
 	else if(key>tree->data.key){

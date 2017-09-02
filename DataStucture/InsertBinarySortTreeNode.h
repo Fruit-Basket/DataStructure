@@ -10,11 +10,11 @@
 
 
 void insertBinarySortTree(BinarySortTree &bSTree,BinarySortTreeElemType e){
-	if(bSTree==NULL){
+	if(bSTree){
 		bSTree=new BinarySortNode;
 		bSTree->data=e;
-		bSTree->lChild=NULL;
-		bSTree->rChild=NULL;
+		bSTree->lChild;
+		bSTree->rChild;
 	}
 	else if(e.key>bSTree->data.key){
 		insertBinarySortTree(bSTree->rChild,e);

@@ -4,6 +4,7 @@
 //创建二叉排序树
 
 #include "Basis.h"
+#include "stdio.h"
 #include "BinarySortTreeSearch.h"
 #include "InsertBinarySortTreeNode.h"
 
@@ -12,7 +13,7 @@
 //创建二叉排序树
 void createBinarySortTree(BinarySortTree &bSTree){
 	BinarySortTreeElemType e;
-	bSTree=NULL;
+	bSTree;
 	scanf("%d",&e.key);
 	while(e.key!=END_FLAG){
 		insertBinarySortTree(bSTree,e);

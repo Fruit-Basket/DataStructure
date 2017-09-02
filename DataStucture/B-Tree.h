@@ -1,11 +1,11 @@
 #ifndef BMinusTree_h
 #define BMinusTree_h
 
-//B-s树的存储表示
+//B-树的存储表示
 
 #include "Basis.h"
 
-
+typedef int KeyType;//数据元素中关键字的类型
 
 typedef struct BMinusTreeNode{
 	int keynum;
