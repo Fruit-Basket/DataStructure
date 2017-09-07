@@ -5,6 +5,8 @@
 
 #include "Basis.h"
 
+typedef int KeyType;
+typedef int InformationType;
 
 typedef struct{
 	KeyType key;
@@ -16,7 +18,5 @@ typedef struct{
 	RedType r[MAXSIZE+1];    //不使用数组的第0号单元，即第0号单元不算入数组的长度值
 	int length;
 }SequenceListForSorting;
-
-
 
 #endif
